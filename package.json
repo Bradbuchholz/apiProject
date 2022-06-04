@@ -1,5 +1,5 @@
 {
-  "name": "template",
+  "name": "apiProject",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CanadianRunner/template.git"
+    "url": "https://github.com/Bradbuchholz/apiProject.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Brad Buchholz",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CanadianRunner/template/issues"
+    "url": "https://github.com/Bradbuchholz/apiProject.git"
   },
-  "homepage": "https://github.com/CanadianRunner/template#readme",
+  "homepage": "https://github.com/Bradbuchholz/apiProject.git",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
