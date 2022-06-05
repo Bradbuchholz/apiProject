@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Currancy Exchanger</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +8,32 @@
   src="https://code.jquery.com/jquery-3.5.1.slim.js"
   integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
   crossorigin="anonymous"></script>
-  <title></title>
+  <title>Currancy Exchanger</title>
 </head>
 <body>
-  
+  <h1>Currancy Exchanger</h1>
+  <div class="container">
+    <div class="showError">
+    <div class="row justify-content-center">
+      <div class="col-3">
+        <label for="firstCurrency">Exchange USD to another currency:</label>
+        <select class="form-control" id="firstCurrency">
+          <option value="USD">USD</option>
+        </select>
+      </div>
+      <div class="col-3">
+        <label for="color">Currency to exchange for:</label>
+        <select class="form-control" id="exchangeCurrency">
+          <option value="EUR">EUR</option>
+          <option value="CHF">CHF</option>
+          <option value="AED">AED</option>
+          <option value="AMD">AMD</option>
+          <option value="BBD">BBD</option>
+          <option value="CUP">CUP</option>
+        </select>
+      </div>
+    </div>
+    </div>
+  </div>
 </body>
 </html>
