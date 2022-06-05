@@ -30,7 +30,7 @@ _A user should be able to type in an amount (in U.S. dollars) and then choose wh
 
 ## Known Bugs
 
-* __
+* _Currently no rate is showing when you hit exchange. Project also has limited amounts of currency choices_
 
 ## License
 
