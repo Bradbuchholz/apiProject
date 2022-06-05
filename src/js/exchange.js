@@ -9,7 +9,7 @@ export class exchanger {
     this.CUP = exchangeRateObject.converson_rates.CUP,
     this.inputCurrency = inputCurrency,
     this.inputAmount = inputAmount,
-    this.outPutAmount = this.exchangeResults(this.inputCurrency,this.inputAmount)
+    this.outPutAmount = this.exchangeResults(this.inputCurrency,this.inputAmount);
   }
 
   exchangeResults(inputCurrency,inputAmount) {
