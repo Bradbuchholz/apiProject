@@ -1,5 +1,3 @@
-import { ResolvePlugin } from "webpack";
-
 export default class exchangeService {  
   static getRate(currency) {
     return new Promise(function(resolve, reject) {

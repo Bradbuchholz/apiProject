@@ -12,6 +12,7 @@ function clearFields() {
 
 $(document).ready(function() {
   $('#exchangeSubmit').click(function() {
+    console.log('Working');
     let curr = $('#exchangeCurrency').val();
     let promise = exchangeService.getRate(currency);
     Promise.then(function(response) {
