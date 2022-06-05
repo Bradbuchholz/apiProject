@@ -20,8 +20,10 @@ _A user should be able to type in an amount (in U.S. dollars) and then choose wh
 ## Setup/Installation Requirements
 
 * _Must have a working internet connection and a web browser_
+* _go to https://www.exchangerate-api.com and apply for a free API key using your email address_
 * _Clone repository from GitHub to your desktop_
-* _Open the directory in your terminal and run npm install._
+* _Create a .env file to store your API key. Label it API_KEY=[your API key goes here]_
+* _Open the directory in your terminal and run npm install_
 * _Once that is complete, run npm run build_
 * _Live server view avaiable with npm run start_
 
