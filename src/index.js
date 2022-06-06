@@ -2,24 +2,21 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import { exchangeService } from './exchangeService.js';
-import exchanger from './exchange.js';
-
-function clearFields() {
-  $('.amount').val("");
-  $('.showError').text("");
-}
+import ExchangeService from './js/exchangeService.js';
+import { Exchanger } from './js/exchange.js';
 
 $(document).ready(function() {
-  $('#exchangeSubmit').click(function() {
-    console.log('Working');
-    let curr = $('#exchangeCurrency').val();
-    let promise = exchangeService.getRate(currency);
-    Promise.then(function(response) {
-      const body = JSON.parse(response);
-      $('.amount').text(`This is the value of your exchange ${curr}`);
-    }, function(error) {
-      $('.showError').text('There was an error processing this request');
+  $('#exchangeSubmit').click(function(event) {
+    event.preventDefault();
+    let exchanges;
+    const inputCurrency = $('#firstCurrency').val();
+    const inputAmount = $('#exchangeCurrency').val();
+    $('#exchangeResult').html("Exchange Amount: ");
+    $('#firstCurrency').val("");
+    ExchangeService.getRate()
+    .then(function(rateResponse) {
+      exchanges = new Exchanger(inputCurrency,inputAmount,rateResponse);
+      $('exchangeResult').append(`${exchanges.exchangeResults(inputCurrency,inputAmount)} ${inputCurrency}`);
     });
-  });
+  })
 });

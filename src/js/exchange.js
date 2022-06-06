@@ -1,4 +1,4 @@
-export class exchanger {
+export class Exchanger {
   constructor(inputCurrency, inputAmount, exchangeRateObject) {
     this.USD = exchangeRateObject.converson_rates.USD,
     this.EUR = exchangeRateObject.converson_rates.EUR,

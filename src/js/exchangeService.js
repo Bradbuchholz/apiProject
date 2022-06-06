@@ -1,22 +1,16 @@
-export default class exchangeService {  
-  static getRate(currency) {
-    return new Promise(function(resolve, reject) {
-      let request = new XMLHttpRequest();
-      const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`;
-      request.onload = function() {
-        if (this.status === 200) {
-          resolve(request.response);
-        } else {
-          reject(request.response);
-        }
+export default class ExchangeService {
+  static getRate() {
+    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`)
+    .then(function(rateResponse) {
+      if (!rateResponse.ok) {
+        throw Error(rateResponse.statusText);
       }
-      request.open("GET", url, true);
-      request.send();
-    });
+      return rateResponse.json();
+    })
+    .catch(function(error) {
+      return error;
+    })
   }
 }
-
-
-
 
 
