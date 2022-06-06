@@ -14,9 +14,9 @@ $(document).ready(function() {
     $('#exchangeResult').html("Exchange Amount: ");
     $('#firstCurrency').val("");
     ExchangeService.getRate()
-    .then(function(rateResponse) {
-      exchanges = new Exchanger(inputCurrency,inputAmount,rateResponse);
-      $('exchangeResult').append(`${exchanges.exchangeResults(inputCurrency,inputAmount)} ${inputCurrency}`);
-    });
-  })
+      .then(function(rateResponse) {
+        exchanges = new Exchanger(inputCurrency,inputAmount,rateResponse);
+        $('exchangeResult').append(`${exchanges.exchangeResult(inputCurrency,inputAmount)} ${inputCurrency}`);
+      });
+  });
 });
