@@ -11,6 +11,8 @@
 * _Node Package Manager_
 * _ESlint_
 * _Webpack_
+* _Jquery_
+* _Bootstrap_
 * _Exchange Rate API_
 
 ## Description
