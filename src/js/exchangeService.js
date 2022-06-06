@@ -1,15 +1,14 @@
 export default class ExchangeService {
-  static getRate() {
-    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`)
-    .then(function(rateResponse) {
+  static async getRate() {
+    try {
+      const rateResponse = await fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`);
       if (!rateResponse.ok) {
         throw Error(rateResponse.statusText);
       }
-      return rateResponse.json();
-    })
-    .catch(function(error) {
+      return await rateResponse.json();
+    } catch (error) {
       return error;
-    })
+    }
   }
 }
 
