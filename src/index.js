@@ -18,15 +18,3 @@ function displayExchange(response, usDollar, currency) {
   }
 }
 
-$(document).ready(function() {
-  $('findRate').click(function(event) {
-    event.preventDefault();
-    let usDollar = $('#usDollar').val();
-    $('#usDollar').val("");
-    let currency = $('input:radio:checked').val();
-    ExchangeService.getExchange()
-      .then(function(response) {
-        displayExchange(response, usDollar, currency);
-      });     
-  });
-});
