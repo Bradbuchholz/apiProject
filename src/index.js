@@ -22,10 +22,8 @@ $(document).ready(function() {
   $('findRate').click(function(event) {
     event.preventDefault();
     let usDollar = $('#usDollar').val();
-    console.log(usDollar);
     $('#usDollar').val("");
     let currency = $('input:radio:checked').val();
-    console.log(currency);
     ExchangeService.getExchange()
       .then(function(response) {
         displayExchange(response, usDollar, currency);
