@@ -10,13 +10,15 @@ $(document).ready(function() {
     event.preventDefault();
     let exchanges;
     const inputCurrency = $('#firstCurrency').val();
-    const inputAmount = $('#exchangeCurrency').val();
+    const outputAmount = $('#exchangeCurrency').val();
+    const inputAmount = $('#amount').val();
     $('#exchangeResult').html("Exchange Amount: ");
     $('#firstCurrency').val("");
     ExchangeService.getRate()
       .then(function(rateResponse) {
-        exchanges = new Exchanger(inputCurrency,inputAmount,rateResponse);
+        exchanges = new Exchanger(inputCurrency, inputAmount, rateResponse);
         $('exchangeResult').append(`${exchanges.exchangeResult(inputCurrency,inputAmount)} ${inputCurrency}`);
+        console.log(rateResponse);
       });
   });
 });
