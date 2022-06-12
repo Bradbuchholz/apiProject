@@ -1,4 +1,42 @@
 body {
-  background-color: rgb(18, 133, 115);
+  background-color: rgb(203, 215, 213);
 }
 
+#error {
+  display: none;
+}
+
+#output {
+  display: none;
+}
+
+#apiError {
+  display: none;
+}
+
+$(document).ready(function(){
+  $('#exchange').click(function(event) {
+    event.preventDefault();
+    const dollar = parseFloat($("#dollar").val()).toFixed(3);
+    const targetCode = $("#codes").val();
+    if ( dollar === "NaN" || dollar < 0 || targetCode === ""){
+      $("#output").hide();
+      $("#error").show();
+    } else {
+      $("#output").show();
+      $("#error").hide();
+      ExchangeService.getExchange(targetCode, dollar)
+        .then(function(response) {
+          if (response.result === "success") {
+            $("#output").text(`${dollar} USD is worth ${parseFloat(response.conversion_result).toFixed(3)} ${targetCode}`);
+          } else {
+            $("#output").hide();
+            $("#error").hide();
+            $("#apiError").show();
+            $("#apiError").text(`API ERROR STATUS ${response}`);
+            console.log(response.status);
+          }
+        }); 
+    }
+  });
+});
