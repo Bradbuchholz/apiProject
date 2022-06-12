@@ -1,5 +1,5 @@
-export default class exchangeService {
-  static async currentRate(convertedCurrency, _firstCurrency, value) {
+export class exchangeService {
+  static async currentRate(convertedCurrency, startingCurrency, value) {
     return new Promise(function (resolve, reject) {
       let request = new XMLHttpRequest();
       const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/${startingCurrency}/${convertedCurrency}/${value}`;
