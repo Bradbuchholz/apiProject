@@ -14,7 +14,7 @@
   <div class="container">
     <h1>Exchange US Dollars into another currency</h1>
     <label for="USD">Enter the amount of USD to convert:</label>
-    <input id="firstCurrency" type="number">
+    <input type="number" min="1" id="dollar" placeholder="USD" class="form-control">
     <select class="form-select" id="exchCurr">
       <option value="" disable hidden>Convert to:</option>
       <option value="AED">UAE Dirham</option>
@@ -23,6 +23,15 @@
       <option value="AMD">Armenian Dram</option>
       <option value="ANG">Netherlands Antillian Guilder</option> 
     </select>
+    <button type="submit" id="exchange" class="btn btn-sucess" value="exchange rate">Exchange</button>
+    <h3>Exchange Value:</h3>
+    <p id="exchange-value"></p>
+  </div>
+  <div id="error">
+    <p id="input-error"></p>
+  </div>
+  <div id="apiError">
+    <p id="apiFail"></p>
   </div>
 </body>
 </html>
