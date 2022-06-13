@@ -2,15 +2,3 @@ body {
   background-color: rgb(203, 215, 213);
 }
 
-#error {
-  display: none;
-}
-
-#output {
-  display: none;
-}
-
-#apiError {
-  display: none;
-}
-

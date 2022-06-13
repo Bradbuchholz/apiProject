@@ -1,17 +1,14 @@
-export class exchangeService {
-  static async currentRate(convertedCurrency, startingCurrency, value) {
-    return new Promise(function (resolve, reject) {
-      let request = new XMLHttpRequest();
-      const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/${startingCurrency}/${convertedCurrency}/${value}`;
-      request.onload = function () {
-        if (this.status === 200) {
-          resolve(request.response);
-        } else {
-          reject(request);
+export class ExchangeService {
+  static getExchange(currency) {
+    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`)
+      .then(function(response) {
+        if(!response.ok) {
+          throw Error(response.statusText);
         }
-      };
-      request.open("GET", url);
-      request.send();
-    });
+        return response.json();
+      })
+      .catch(function(error) {
+        return error;
+      });
   }
 }
